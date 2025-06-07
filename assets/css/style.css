@@ -1,0 +1,597 @@
+/* 
+ * Zona do Jogo - Estilo Principal
+ * Cores: roxo neon (#8e44ad), verde elétrico (#2ecc71), fundo escuro (#1a1a1a)
+ * Tipografia: "Press Start 2P" (Google Fonts)
+ */
+
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-primaria: #8e44ad;      /* Roxo neon */
+  --cor-secundaria: #2ecc71;    /* Verde elétrico */
+  --cor-fundo: #1a1a1a;         /* Fundo escuro */
+  --cor-texto: #ffffff;         /* Texto branco */
+  --cor-destaque: #f1c40f;      /* Amarelo destaque */
+  --cor-card: #2d2d2d;          /* Fundo dos cards */
+  --sombra-padrao: 0 4px 8px rgba(0, 0, 0, 0.5);
+  --borda-neon: 0 0 10px rgba(142, 68, 173, 0.8);
+  --transicao: all 0.3s ease;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Contêiner principal */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+  background-color: rgba(26, 26, 26, 0.9);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--sombra-padrao);
+  border-bottom: 2px solid var(--cor-primaria);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  color: var(--cor-primaria);
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px rgba(142, 68, 173, 0.5);
+}
+
+/* Menu de navegação */
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: var(--cor-texto);
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: var(--transicao);
+}
+
+nav ul li a:hover {
+  background-color: var(--cor-primaria);
+  box-shadow: var(--borda-neon);
+}
+
+/* Menu hambúrguer para mobile */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--cor-texto);
+  margin: 3px 0;
+  border-radius: 3px;
+  transition: var(--transicao);
+}
+
+/* Banner principal */
+.banner {
+  height: 400px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.banner h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--cor-secundaria);
+  text-shadow: 0 0 10px rgba(46, 204, 113, 0.8);
+}
+
+.banner p {
+  font-size: 0.9rem;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-fundo);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: var(--transicao);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(46, 204, 113, 0.8);
+}
+
+.btn-primario {
+  background-color: var(--cor-primaria);
+}
+
+.btn-secundario {
+  background-color: var(--cor-secundaria);
+}
+
+/* Seções */
+section {
+  padding: 40px 0;
+}
+
+.section-titulo {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--cor-primaria);
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.section-titulo::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: var(--cor-secundaria);
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+/* Cards de jogos */
+.jogos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.jogo-card {
+  background-color: var(--cor-card);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--sombra-padrao);
+  transition: var(--transicao);
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.jogo-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.jogo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+}
+
+.jogo-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.jogo-info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.jogo-titulo {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: var(--cor-destaque);
+}
+
+.jogo-descricao {
+  font-size: 0.7rem;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.jogo-categoria {
+  display: inline-block;
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto);
+  font-size: 0.6rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+/* Últimos adicionados */
+.ultimos-jogos {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--cor-primaria) var(--cor-fundo);
+}
+
+.ultimos-jogos::-webkit-scrollbar {
+  height: 8px;
+}
+
+.ultimos-jogos::-webkit-scrollbar-track {
+  background: var(--cor-fundo);
+}
+
+.ultimos-jogos::-webkit-scrollbar-thumb {
+  background-color: var(--cor-primaria);
+  border-radius: 10px;
+}
+
+.miniatura-jogo {
+  min-width: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--sombra-padrao);
+  transition: var(--transicao);
+}
+
+.miniatura-jogo:hover {
+  transform: scale(1.05);
+}
+
+.miniatura-jogo img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.miniatura-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 10px;
+}
+
+.miniatura-titulo {
+  font-size: 0.7rem;
+  color: var(--cor-texto);
+  margin: 0;
+}
+
+/* Filtros de categoria */
+.filtros {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filtro-btn {
+  background-color: var(--cor-card);
+  color: var(--cor-texto);
+  border: 2px solid var(--cor-primaria);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: var(--transicao);
+}
+
+.filtro-btn:hover, .filtro-btn.ativo {
+  background-color: var(--cor-primaria);
+  box-shadow: 0 0 10px rgba(142, 68, 173, 0.8);
+}
+
+/* Página do jogo */
+.jogo-container {
+  background-color: var(--cor-card);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 40px;
+  box-shadow: var(--sombra-padrao);
+}
+
+.jogo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.jogo-titulo-grande {
+  font-size: 1.5rem;
+  color: var(--cor-destaque);
+}
+
+.jogo-frame {
+  width: 100%;
+  height: 500px;
+  border: 3px solid var(--cor-primaria);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: #000;
+}
+
+.jogo-instrucoes {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.jogo-instrucoes h3 {
+  font-size: 1rem;
+  color: var(--cor-secundaria);
+  margin-bottom: 10px;
+}
+
+.jogo-instrucoes p {
+  font-size: 0.7rem;
+}
+
+/* Rodapé */
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 40px 0;
+  margin-top: 60px;
+  border-top: 2px solid var(--cor-primaria);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.footer-section h3 {
+  color: var(--cor-secundaria);
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.footer-section p, .footer-section a {
+  font-size: 0.7rem;
+  color: var(--cor-texto);
+  margin-bottom: 10px;
+  display: block;
+  text-decoration: none;
+  transition: var(--transicao);
+}
+
+.footer-section a:hover {
+  color: var(--cor-secundaria);
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--cor-card);
+  border-radius: 50%;
+  transition: var(--transicao);
+}
+
+.social-links a:hover {
+  background-color: var(--cor-primaria);
+  transform: translateY(-5px);
+}
+
+.social-links img {
+  width: 20px;
+  height: 20px;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.6rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logo {
+    margin-bottom: 15px;
+  }
+  
+  nav {
+    width: 100%;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    display: none;
+  }
+  
+  nav ul.show {
+    display: flex;
+  }
+  
+  nav ul li {
+    margin: 10px 0;
+  }
+  
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .banner {
+    height: 300px;
+  }
+  
+  .banner h2 {
+    font-size: 1.5rem;
+  }
+  
+  .jogos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  
+  .jogo-frame {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+  
+  .banner {
+    height: 250px;
+  }
+  
+  .banner h2 {
+    font-size: 1.2rem;
+  }
+  
+  .section-titulo {
+    font-size: 1.2rem;
+  }
+  
+  .jogos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .jogo-frame {
+    height: 300px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Animações */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes neon-glow {
+  0% {
+    box-shadow: 0 0 5px var(--cor-primaria);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--cor-primaria), 0 0 30px var(--cor-secundaria);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--cor-primaria);
+  }
+}
+
+.neon-glow {
+  animation: neon-glow 2s infinite;
+}
+
+/* Efeitos de hover adicionais */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos para o canvas dos jogos */
+canvas.jogo-canvas {
+  display: block;
+  margin: 0 auto;
+  background-color: #000;
+  border: 3px solid var(--cor-primaria);
+  border-radius: 8px;
+}
+

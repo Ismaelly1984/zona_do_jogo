@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos - Zona do Jogo</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <meta name="description" content="Explore nossa coleção de jogos online jogáveis diretamente no navegador">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="assets/img/logo.svg" alt="Zona do Jogo Logo">
+                <h1>ZONA DO JOGO</h1>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="jogos.html" class="active">Jogos</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="banner" style="height: 250px;">
+        <h2>NOSSA COLEÇÃO DE JOGOS</h2>
+        <p>Escolha entre diversos jogos e divirta-se diretamente no seu navegador!</p>
+    </section>
+
+    <!-- Filtros de Categoria -->
+    <section>
+        <div class="container">
+            <div class="filtros">
+                <button class="filtro-btn ativo" data-categoria="todos">Todos</button>
+                <button class="filtro-btn" data-categoria="acao">Ação</button>
+                <button class="filtro-btn" data-categoria="retro">Retrô</button>
+                <button class="filtro-btn" data-categoria="puzzle">Puzzle</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Jogos -->
+    <section>
+        <div class="container">
+            <div class="jogos-grid" id="jogos-container">
+                <!-- Jogo 1 -->
+                <div class="jogo-card" data-categoria="retro">
+                    <img src="assets/img/snake.jpg" alt="Snake Game" class="jogo-img">
+                    <div class="jogo-info">
+                        <h3 class="jogo-titulo">Snake</h3>
+                        <span class="jogo-categoria">Retrô</span>
+                        <p class="jogo-descricao">Controle a cobra, coma as frutas e cresça o máximo que puder sem colidir com as paredes ou com seu próprio corpo.</p>
+                        <a href="jogo.html?jogo=snake" class="btn btn-secundario">JOGAR</a>
+                    </div>
+                </div>
+                
+                <!-- Jogo 2 -->
+                <div class="jogo-card" data-categoria="retro">
+                    <img src="assets/img/flappy.jpg" alt="Flappy Bird" class="jogo-img">
+                    <div class="jogo-info">
+                        <h3 class="jogo-titulo">Flappy Bird</h3>
+                        <span class="jogo-categoria">Arcade</span>
+                        <p class="jogo-descricao">Faça o pássaro voar entre os canos clicando na tela. Parece fácil, mas é mais desafiador do que você imagina!</p>
+                        <a href="jogo.html?jogo=flappy" class="btn btn-secundario">JOGAR</a>
+                    </div>
+                </div>
+                
+                <!-- Jogo 3 -->
+                <div class="jogo-card" data-categoria="puzzle">
+                    <img src="assets/img/puzzle.jpg" alt="Tetris" class="jogo-img">
+                    <div class="jogo-info">
+                        <h3 class="jogo-titulo">Tetris</h3>
+                        <span class="jogo-categoria">Puzzle</span>
+                        <p class="jogo-descricao">O clássico jogo de encaixar blocos. Organize as peças que caem para completar linhas e marcar pontos.</p>
+                        <a href="jogo.html?jogo=tetris" class="btn btn-secundario">JOGAR</a>
+                    </div>
+                </div>
+                
+                <!-- Jogo 4 -->
+                <div class="jogo-card" data-categoria="acao">
+                    <img src="assets/img/action.jpg" alt="Space Shooter" class="jogo-img">
+                    <div class="jogo-info">
+                        <h3 class="jogo-titulo">Space Shooter</h3>
+                        <span class="jogo-categoria">Ação</span>
+                        <p class="jogo-descricao">Pilote sua nave espacial e destrua os inimigos que aparecem. Desvie dos obstáculos e colete power-ups para melhorar suas armas.</p>
+                        <a href="jogo.html?jogo=space" class="btn btn-secundario">JOGAR</a>
+                    </div>
+                </div>
+                
+                <!-- Jogo 5 -->
+                <div class="jogo-card" data-categoria="puzzle">
+                    <img src="assets/img/puzzle.jpg" alt="Memory Game" class="jogo-img">
+                    <div class="jogo-info">
+                        <h3 class="jogo-titulo">Memory Game</h3>
+                        <span class="jogo-categoria">Puzzle</span>
+                        <p class="jogo-descricao">Teste sua memória encontrando os pares de cartas. Quanto mais rápido você completar, maior será sua pontuação.</p>
+                        <a href="jogo.html?jogo=memory" class="btn btn-secundario">JOGAR</a>
+                    </div>
+                </div>
+                
+                <!-- Jogo 6 -->
+                <div class="jogo-card" data-categoria="acao">
+                    <img src="assets/img/action.jpg" alt="Asteroid Blaster" class="jogo-img">
+                    <div class="jogo-info">
+                        <h3 class="jogo-titulo">Asteroid Blaster</h3>
+                        <span class="jogo-categoria">Ação</span>
+                        <p class="jogo-descricao">Destrua os asteroides antes que eles atinjam sua nave. Cuidado com os asteroides maiores que se quebram em pedaços menores!</p>
+                        <a href="jogo.html?jogo=asteroid" class="btn btn-secundario">JOGAR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>ZONA DO JOGO</h3>
+                <p>O melhor portal de jogos online para jogar diretamente no seu navegador.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>LINKS RÁPIDOS</h3>
+                <a href="index.html">Início</a>
+                <a href="jogos.html">Jogos</a>
+                <a href="index.html#sobre">Sobre</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>CONTATO</h3>
+                <p>contato@zonadojogo.com.br</p>
+                <p>+55 (11) 9999-8888</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>REDES SOCIAIS</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank"><img src="assets/img/instagram.svg" alt="Instagram"></a>
+                    <a href="#" target="_blank"><img src="assets/img/youtube.svg" alt="YouTube"></a>
+                    <a href="#" target="_blank"><img src="assets/img/tiktok.svg" alt="TikTok"></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Zona do Jogo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
